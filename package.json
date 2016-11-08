@@ -5,8 +5,9 @@
   "main": "",
   "scripts": {
     "postinstall": "mkdir -p dist",
+    "start": "run-p serve watch:*",
+    "serve": "browser-sync start --port 2112 --ss dist",
     "build": "run-p build:*",
-    "watch": "run-p watch:*",
     "build:html": "cp src/*.html dist/",
     "watch:html": "onchange -i src/**/*.html -- npm run build:html",
     "build:sass": "node-sass src/main.scss dist/bundle.css",
@@ -23,6 +24,7 @@
     "webpack": "^1.13.2"
   },
   "devDependencies": {
+    "browser-sync": "^2.17.5",
     "onchange": "^2.5.0"
   },
   "author": "dougflip (Doug DiFilippo)",
