@@ -1,8 +1,18 @@
 Starter
 =======
 
-Basic set up for building and watching files for web development.
+## Setup
 
-- `npm run` - see ALL the commands
-- `npm run build` - single run of build
-- `npm run watch` - builds and watches files for development
+```
+npm install
+```
+
+## Development
+
+```
+npm start
+```
+
+Starts dev server and watchers on source files.
+
+Use `npm run` to see other available scripts.
