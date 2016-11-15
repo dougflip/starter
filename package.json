@@ -9,11 +9,11 @@
     "serve": "browser-sync start --port 2112 --ss dist",
     "build": "run-p build:*",
     "build:html": "cp src/*.html dist/",
-    "watch:html": "onchange -i src/**/*.html -- npm run build:html",
+    "watch:html": "onchange -i \"src/**/*.html\" -- npm run build:html",
     "build:sass": "node-sass src/main.scss dist/bundle.css",
-    "watch:sass": "onchange -i src/**/*.scss -- npm run build:sass",
+    "watch:sass": "onchange -i \"src/**/*.scss\" -- npm run build:sass",
     "build:js": "webpack",
-    "watch:js": "onchange -i src/**/*.js -- npm run build:js"
+    "watch:js": "onchange -i \"src/**/*.js\" -- npm run build:js"
   },
   "dependencies": {
     "babel-core": "^6.13.2",
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.17.5",
-    "onchange": "^2.5.0"
+    "onchange": "^3.0.2"
   },
   "author": "dougflip (Doug DiFilippo)",
   "license": "MIT"
