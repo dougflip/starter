@@ -10,6 +10,10 @@
 <body>
     <div id="main"></div>
     <script src="bundle.js"></script>
+    <script type="text/javascript">
+      const node = document.getElementById('main');
+      const app = Elm.Main.embed(node);
+    </script>
 </body>
 
 </html>

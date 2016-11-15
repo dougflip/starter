@@ -4,7 +4,7 @@
   "description": "[TODO]",
   "main": "",
   "scripts": {
-    "postinstall": "mkdir -p dist",
+    "postinstall": "mkdir -p dist && elm package install",
     "start": "run-p serve watch:*",
     "serve": "browser-sync start --port 2112 --ss dist",
     "build": "run-p build:*",
@@ -12,8 +12,8 @@
     "watch:html": "onchange -i \"src/**/*.html\" -- npm run build:html",
     "build:sass": "node-sass src/main.scss dist/bundle.css",
     "watch:sass": "onchange -i \"src/**/*.scss\" -- npm run build:sass",
-    "build:js": "webpack",
-    "watch:js": "onchange -i \"src/**/*.js\" -- npm run build:js"
+    "build:elm": "elm make src/Main.elm --output=dist/bundle.js",
+    "watch:elm": "onchange -i src/**/*.elm -- npm run build:elm"
   },
   "dependencies": {
     "babel-core": "^6.13.2",

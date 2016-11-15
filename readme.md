@@ -6,9 +6,8 @@ The `master` branch is plain JS but there are branches for other frameworks/lang
 
 ## Setup
 
-```
-npm install
-```
+1. `npm install -g elm` - install Elm globally
+2. `npm install` - install dependencies
 
 ## Development
 
