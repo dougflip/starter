@@ -4,7 +4,7 @@
   "description": "[TODO]",
   "main": "",
   "scripts": {
-    "postinstall": "mkdir -p dist && elm package install",
+    "postinstall": "mkdir -p dist && elm package install && elm-test init",
     "start": "run-p serve watch:*",
     "serve": "browser-sync start --port 2112 --ss dist",
     "build": "run-p build:*",
@@ -13,7 +13,9 @@
     "build:sass": "node-sass src/main.scss dist/bundle.css",
     "watch:sass": "onchange -i \"src/**/*.scss\" -- npm run build:sass",
     "build:elm": "elm make src/Main.elm --output=dist/bundle.js",
-    "watch:elm": "onchange -i src/**/*.elm -- npm run build:elm"
+    "watch:elm": "onchange -i \"src/**/*.elm\" -- npm run build:elm",
+    "test": "elm-test",
+    "watch:test": "onchange -i \"dist/bundle.js\" \"tests/**/*.elm\" -- npm test"
   },
   "dependencies": {
     "babel-core": "^6.13.2",
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.17.5",
+    "elm-test": "^0.18.2",
     "onchange": "^3.0.2"
   },
   "author": "dougflip (Doug DiFilippo)",
